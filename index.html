@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Read the Holy Quran with Arabic text, translations and recitation on Noor-e-Quran.">
+  <meta name="theme-color" content="#123d32">
+  <title>Noor-e-Quran | Read, Listen & Reflect</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Noor-e-Quran home">
+      <span class="brand-mark">۞</span>
+      <span><strong>Noor-e-Quran</strong><small>Read • Understand • Reflect</small></span>
+    </a>
+    <nav class="top-nav" aria-label="Main navigation">
+      <a href="#browse">Surahs</a><a href="#reader">Read Quran</a>
+      <button id="themeToggle" class="icon-button" type="button" aria-label="Toggle dark mode">◐</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-pattern"></div>
+      <p class="eyebrow">THE HOLY QURAN</p>
+      <h1>Let the Quran bring<br><span>light to your heart.</span></h1>
+      <p class="hero-copy">Read the Arabic Quran, explore translations and listen to recitation — all in one peaceful place.</p>
+      <a class="primary-button" href="#browse">Explore the Quran <span>→</span></a>
+      <div class="hero-ornament" aria-hidden="true">۞</div>
+    </section>
+
+    <section class="quick-stats" aria-label="Quran facts">
+      <div><strong>114</strong><span>Surahs</span></div>
+      <div><strong>30</strong><span>Juz / Paras</span></div>
+      <div><strong>6,236</strong><span>Ayahs*</span></div>
+    </section>
+    <p class="tiny-note">*Ayah totals can vary slightly by counting convention.</p>
+
+    <section class="content-section" id="browse">
+      <div class="section-heading">
+        <div><p class="eyebrow">START YOUR JOURNEY</p><h2>Explore Surahs</h2></div>
+        <label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Search Surah..." aria-label="Search Surahs"></label>
+      </div>
+      <div id="surahGrid" class="surah-grid">
+        <div class="loading-card">Loading Surahs…</div>
+      </div>
+    </section>
+
+    <section class="reader-section" id="reader">
+      <div class="reader-top">
+        <div><p class="eyebrow">QURAN READER</p><h2 id="readerTitle">Select a Surah</h2><p id="readerMeta" class="muted">Choose any Surah above to begin reading.</p></div>
+        <div class="reader-controls">
+          <label class="select-wrap"><span class="sr-only">Translation</span>
+            <select id="translationSelect">
+              <option value="en.sahih">English — Sahih International</option>
+              <option value="ur.jalandhry">Urdu — Fateh Muhammad Jalandhry</option>
+              <option value="en.asad">English — Muhammad Asad</option>
+            </select>
+          </label>
+          <button id="fontDown" class="small-button" type="button" aria-label="Decrease Arabic font size">A−</button>
+          <button id="fontUp" class="small-button" type="button" aria-label="Increase Arabic font size">A+</button>
+        </div>
+      </div>
+      <div id="ayahList" class="ayah-list">
+        <div class="empty-reader">Your selected Surah will appear here.</div>
+      </div>
+      <div class="reader-footer">
+        <button id="prevSurah" class="outline-button" type="button" disabled>← Previous</button>
+        <button id="nextSurah" class="outline-button" type="button" disabled>Next →</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand">۞ Noor-e-Quran</div>
+    <p>A simple place to read, understand and reflect on the Holy Quran.</p>
+    <p class="footer-small">Quran text and translations are loaded from AlQuran Cloud API. Please verify translation and recitation details with trusted sources.</p>
+    <p class="footer-small">© <span id="year"></span> Noor-e-Quran</p>
+  </footer>
+
+  <audio id="audioPlayer" preload="none"></audio>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
